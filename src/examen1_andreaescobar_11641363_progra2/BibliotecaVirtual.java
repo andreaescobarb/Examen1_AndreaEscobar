@@ -7,6 +7,7 @@ package examen1_andreaescobar_11641363_progra2;
 
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,6 +21,7 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
      */
     public BibliotecaVirtual() {
         initComponents();
+        
     }
 
     /**
@@ -46,9 +48,9 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jt_correo = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jt_genero = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jb_crear = new javax.swing.JButton();
+        jc_genre = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -71,7 +73,13 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         jt_autor = new javax.swing.JTextField();
         jd_publicacion = new com.toedter.calendar.JDateChooser();
         jb_guardar = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        cb = new javax.swing.JComboBox<>();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,6 +101,13 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         jLabel8.setText("Creacion de Usuario");
 
         jb_crear.setText("Crear");
+        jb_crear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_crearMouseClicked(evt);
+            }
+        });
+
+        jc_genre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Accion", "Fantasia", "Romance", "Historia", " " }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -118,18 +133,19 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(264, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jt_tel)
-                            .addComponent(jt_correo)
-                            .addComponent(jt_genero, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jt_tel, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                                .addComponent(jt_correo))
+                            .addComponent(jc_genre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
                         .addComponent(jb_crear)
                         .addGap(69, 69, 69))))
         );
@@ -164,10 +180,10 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
                     .addComponent(jt_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jt_genero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jb_crear))
-                .addContainerGap(43, Short.MAX_VALUE))
+                    .addComponent(jb_crear)
+                    .addComponent(jc_genre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Creacion de Usuario", jPanel1);
@@ -207,6 +223,11 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
                 jb_guardarMouseClicked(evt);
             }
         });
+        jb_guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_guardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -240,7 +261,7 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
                                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(jt_autor)
                                             .addComponent(jd_publicacion, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))))))
-                        .addContainerGap(34, Short.MAX_VALUE))
+                        .addContainerGap(16, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14)
@@ -298,23 +319,78 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(jt_edicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Libros", jPanel3);
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel19.setText("Modificar Libros");
+
+        cb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel20.setText("Nuevo Nombre");
+
+        jLabel21.setText("jLabel21");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jLabel19))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel21))))
+                .addContainerGap(362, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel19)
+                .addGap(55, 55, 55)
+                .addComponent(cb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(jLabel20)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel21)
+                .addContainerGap(204, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Modificar", jPanel2);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGap(0, 554, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGap(0, 416, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab4", jPanel4);
+        jTabbedPane1.addTab("Log in", jPanel4);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 554, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 416, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Eliminar", jPanel5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -322,15 +398,12 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
+                .addGap(28, 28, 28))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+            .addComponent(jTabbedPane1)
         );
 
         pack();
@@ -352,16 +425,24 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
 
         if (pass.equals(
                 "password")) {
-            titulo =jt_titulo.getText();
-            puntaje = Integer.parseInt((String)jc_puntaje.getSelectedItem());
-            genero = ((String)jc_generos.getSelectedItem());
-            valor = Integer.parseInt((String)jt_valor.getText());
+            titulo = jt_titulo.getText();
+            puntaje = Integer.parseInt((String) jc_puntaje.getSelectedItem());
+            genero = ((String) jc_generos.getSelectedItem());
+            valor = Integer.parseInt((String) jt_valor.getText());
             descripcion = jTextArea1.getText();
-            copias= Integer.parseInt(jt_copias.getText());
+            copias = Integer.parseInt(jt_copias.getText());
             autor = jt_autor.getText();
             fechapublicacion = jd_publicacion.getDate();
             edicion = Integer.parseInt(jt_edicion.getText());
             libro.add(new Libro(titulo, genero, puntaje, valor, descripcion, copias, autor, fechapublicacion, edicion));
+            this.cb.addItem(libro.get(libro.size()-1).getTitulo());;
+            jt_titulo.setText("");
+            jc_puntaje.setSelectedItem(0);
+            jc_generos.setSelectedItem(0);
+            jt_valor.setText("");
+            jTextArea1.setText("");
+            jt_copias.setText("");
+            jt_edicion.setText("");
             JOptionPane.showMessageDialog(this, "Libro agregado exitosamente");
 
         } else {
@@ -369,6 +450,32 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jb_guardarMouseClicked
+
+    private void jb_crearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearMouseClicked
+        String usuario;
+        String contraseña;
+        Date nacimiento;
+        int telefono;
+        String correo;
+        String nombre;
+        String genero;
+        ArrayList<Libro> books = new ArrayList();
+        ArrayList<Usuarios> buddies = new ArrayList();
+        
+        usuario = jt_user.getText();
+        contraseña = jt_password.getText();
+        nacimiento = jDateChooser1.getDate();
+        telefono = Integer.parseInt(jt_tel.getText());
+        correo = jt_correo.getText();
+        nombre = jt_nombre.getText();
+        genero = (String)jc_genre.getSelectedItem();
+        
+        user.add(new Usuarios(usuario, contraseña, nacimiento, telefono, correo, nombre, genero, books, buddies));
+    }//GEN-LAST:event_jb_crearMouseClicked
+
+    private void jb_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_guardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_guardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -414,6 +521,7 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cb;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -425,7 +533,10 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -434,21 +545,23 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton jb_crear;
     private javax.swing.JButton jb_guardar;
     private javax.swing.JComboBox<String> jc_generos;
+    private javax.swing.JComboBox<String> jc_genre;
     private javax.swing.JComboBox<String> jc_puntaje;
     private com.toedter.calendar.JDateChooser jd_publicacion;
     private javax.swing.JTextField jt_autor;
     private javax.swing.JTextField jt_copias;
     private javax.swing.JTextField jt_correo;
     private javax.swing.JTextField jt_edicion;
-    private javax.swing.JTextField jt_genero;
     private javax.swing.JTextField jt_nombre;
     private javax.swing.JTextField jt_password;
     private javax.swing.JTextField jt_tel;
@@ -456,6 +569,6 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
     private javax.swing.JTextField jt_user;
     private javax.swing.JTextField jt_valor;
     // End of variables declaration//GEN-END:variables
-    ArrayList<Usuarios> usuario = new ArrayList();
+    ArrayList<Usuarios> user = new ArrayList();
     ArrayList<Libro> libro = new ArrayList();
 }

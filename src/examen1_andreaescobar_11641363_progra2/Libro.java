@@ -12,6 +12,7 @@ public class Libro {
     private String autor;
     private Date fechapublicacion;
     private int edicion;
+    
 
     public Libro() {
     }   

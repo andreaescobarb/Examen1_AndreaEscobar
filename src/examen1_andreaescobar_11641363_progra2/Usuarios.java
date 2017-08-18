@@ -100,9 +100,4 @@ public class Usuarios {
     public void setAmigos(ArrayList<Usuarios> amigos) {
         this.amigos = amigos;
     }
-
-    @Override
-    public String toString() {
-        return "Usuarios{" + "usuario=" + usuario + ", contrase\u00f1a=" + contraseña + ", nacimiento=" + nacimiento + ", telefono=" + telefono + ", correo=" + correo + ", nombre=" + nombre + ", genero=" + genero + ", libros=" + libros + ", amigos=" + amigos + '}';
-    }
 }
