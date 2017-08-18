@@ -21,7 +21,7 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
      */
     public BibliotecaVirtual() {
         initComponents();
-        
+
     }
 
     /**
@@ -78,6 +78,25 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         cb = new javax.swing.JComboBox<>();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jtnuevonombre = new javax.swing.JTextField();
+        jtnuevascopias = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ta_nuevadescripcion = new javax.swing.JTextArea();
+        jcnuevogenero = new javax.swing.JComboBox<>();
+        jcnuevopuntaje = new javax.swing.JComboBox<>();
+        jt_nuevovalor = new javax.swing.JTextField();
+        jt_nuevaedicion = new javax.swing.JTextField();
+        jt_nuevoautor = new javax.swing.JTextField();
+        jd_nuevafechapub = new com.toedter.calendar.JDateChooser();
+        jb_modificar = new javax.swing.JButton();
+        jb_eliminar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
 
@@ -145,7 +164,7 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
                                 .addComponent(jt_tel, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
                                 .addComponent(jt_correo))
                             .addComponent(jc_genre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
                         .addComponent(jb_crear)
                         .addGap(69, 69, 69))))
         );
@@ -183,7 +202,7 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(jb_crear)
                     .addComponent(jc_genre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Creacion de Usuario", jPanel1);
@@ -191,7 +210,7 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel9.setText("Agregar Nuevo Libro");
 
-        jLabel10.setText("Titulol");
+        jLabel10.setText("Titulo");
 
         jLabel11.setText("Genero");
 
@@ -261,7 +280,7 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
                                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(jt_autor)
                                             .addComponent(jd_publicacion, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))))))
-                        .addContainerGap(16, Short.MAX_VALUE))
+                        .addContainerGap(34, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14)
@@ -319,7 +338,7 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(jt_edicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Libros", jPanel3);
@@ -327,11 +346,53 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel19.setText("Modificar Libros");
 
-        cb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libros" }));
 
         jLabel20.setText("Nuevo Nombre");
 
-        jLabel21.setText("jLabel21");
+        jLabel21.setText("Nuevo Genero");
+
+        jLabel22.setText("Nuevo Puntaje");
+
+        jLabel23.setText("Nueva Descripcion");
+
+        jLabel24.setText("Nuevo numero de Copias Disponibles");
+
+        jLabel25.setText("Nuevo Valor");
+
+        jLabel26.setText("Nueva Edicion");
+
+        jLabel27.setText("Nuevo Autor");
+
+        jLabel28.setText("Nueva Fecha de Publicacion");
+
+        ta_nuevadescripcion.setColumns(20);
+        ta_nuevadescripcion.setRows(5);
+        jScrollPane2.setViewportView(ta_nuevadescripcion);
+
+        jcnuevogenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Accion", "Fantasia", "Romance", "Historia", " " }));
+
+        jcnuevopuntaje.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
+
+        jt_nuevoautor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jt_nuevoautorActionPerformed(evt);
+            }
+        });
+
+        jb_modificar.setText("Modificar");
+        jb_modificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_modificarMouseClicked(evt);
+            }
+        });
+
+        jb_eliminar.setText("Eliminar");
+        jb_eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_eliminarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -341,27 +402,107 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(49, 49, 49)
-                        .addComponent(jLabel19))
+                        .addComponent(jLabel19)
+                        .addGap(108, 108, 108)
+                        .addComponent(cb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
+                        .addContainerGap()
+                        .addComponent(jLabel20))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel21))))
-                .addContainerGap(362, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(jLabel24)
+                                    .addGap(41, 41, 41))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                    .addComponent(jLabel23)
+                                    .addGap(129, 129, 129)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel21)
+                                    .addComponent(jLabel22)
+                                    .addComponent(jLabel25)
+                                    .addComponent(jLabel26)
+                                    .addComponent(jLabel27)
+                                    .addComponent(jLabel28))
+                                .addGap(84, 84, 84)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jt_nuevovalor, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                                    .addComponent(jt_nuevaedicion)
+                                    .addComponent(jt_nuevoautor))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jb_eliminar)
+                                    .addComponent(jb_modificar)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jd_nuevafechapub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jcnuevopuntaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jtnuevonombre, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jcnuevogenero, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jtnuevascopias, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 189, Short.MAX_VALUE)))))
+                .addGap(42, 42, 42))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jLabel19)
-                .addGap(55, 55, 55)
-                .addComponent(cb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(jLabel20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(cb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(jtnuevonombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel21)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(jcnuevogenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jcnuevopuntaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel23)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(jtnuevascopias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel25)
+                            .addComponent(jt_nuevovalor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel26)
+                            .addComponent(jt_nuevaedicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jb_modificar)
+                        .addGap(19, 19, 19)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel27)
+                        .addComponent(jt_nuevoautor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jb_eliminar)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel28)
+                    .addComponent(jd_nuevafechapub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22))
         );
 
         jTabbedPane1.addTab("Modificar", jPanel2);
@@ -370,11 +511,11 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 554, Short.MAX_VALUE)
+            .addGap(0, 572, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 416, Short.MAX_VALUE)
+            .addGap(0, 426, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Log in", jPanel4);
@@ -383,11 +524,11 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 554, Short.MAX_VALUE)
+            .addGap(0, 572, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 416, Short.MAX_VALUE)
+            .addGap(0, 426, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Eliminar", jPanel5);
@@ -398,12 +539,14 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
-                .addGap(28, 28, 28))
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         pack();
@@ -435,7 +578,7 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
             fechapublicacion = jd_publicacion.getDate();
             edicion = Integer.parseInt(jt_edicion.getText());
             libro.add(new Libro(titulo, genero, puntaje, valor, descripcion, copias, autor, fechapublicacion, edicion));
-            this.cb.addItem(libro.get(libro.size()-1).getTitulo());;
+            this.cb.addItem(libro.get(libro.size() - 1).getTitulo());;
             jt_titulo.setText("");
             jc_puntaje.setSelectedItem(0);
             jc_generos.setSelectedItem(0);
@@ -443,6 +586,7 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
             jTextArea1.setText("");
             jt_copias.setText("");
             jt_edicion.setText("");
+            jt_autor.setText("");
             JOptionPane.showMessageDialog(this, "Libro agregado exitosamente");
 
         } else {
@@ -461,21 +605,74 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         String genero;
         ArrayList<Libro> books = new ArrayList();
         ArrayList<Usuarios> buddies = new ArrayList();
-        
+
         usuario = jt_user.getText();
         contraseña = jt_password.getText();
         nacimiento = jDateChooser1.getDate();
         telefono = Integer.parseInt(jt_tel.getText());
         correo = jt_correo.getText();
         nombre = jt_nombre.getText();
-        genero = (String)jc_genre.getSelectedItem();
-        
+        genero = (String) jc_genre.getSelectedItem();
+
         user.add(new Usuarios(usuario, contraseña, nacimiento, telefono, correo, nombre, genero, books, buddies));
     }//GEN-LAST:event_jb_crearMouseClicked
 
     private void jb_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_guardarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jb_guardarActionPerformed
+
+    private void jt_nuevoautorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt_nuevoautorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jt_nuevoautorActionPerformed
+
+    private void jb_eliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_eliminarMouseClicked
+        if (libro.size() == 0) {
+            JOptionPane.showMessageDialog(this, "No hay libros existenes para eliminar");
+        } else {
+            int pos = cb.getSelectedIndex() - 1;
+            libro.remove(pos);
+            this.cb.removeItem(pos);
+            JOptionPane.showMessageDialog(this, "Libro eliminado exitosamente");
+        }
+    }//GEN-LAST:event_jb_eliminarMouseClicked
+
+    private void jb_modificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modificarMouseClicked
+        // TODO add your handling code here:
+        int pos = cb.getSelectedIndex() - 1;
+        String newtitle;
+        String newgenre;
+        int newscore;
+        int newvalue;
+        String newdescripcion;
+        int newcopy;
+        String newautor;
+        Date newfechapublicacion;
+        int newedicion;
+        if (libro.size() == 0) {
+            JOptionPane.showMessageDialog(this, "No hay libros existentes para modificar");
+        } else{
+            newtitle = jtnuevonombre.getText();
+            newgenre = (String)jc_genre.getSelectedItem();
+            newscore = Integer.parseInt((String)jcnuevopuntaje.getSelectedItem());
+            newvalue = Integer.parseInt(jt_nuevovalor.getText());
+            newdescripcion = ta_nuevadescripcion.getText();
+            newcopy = Integer.parseInt(jtnuevascopias.getText());
+            newautor = jt_nuevoautor.getText();
+            newfechapublicacion = jd_nuevafechapub.getDate();
+            newedicion = Integer.parseInt(jt_nuevaedicion.getText());
+            libro.set(pos, new Libro(newtitle, newgenre, newvalue, ERROR, newdescripcion, pos, newautor, newfechapublicacion, newedicion));
+            
+            jtnuevonombre.setText("");
+            jt_nuevovalor.setText("");
+            ta_nuevadescripcion.setText("");
+            jtnuevascopias.setText("");
+            jt_nuevoautor.setText("");
+            jt_nuevaedicion.setText("");
+            
+            JOptionPane.showMessageDialog(this, "Libro modificado exitosamente!");
+        }
+
+    }//GEN-LAST:event_jb_modificarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -537,6 +734,13 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -550,24 +754,36 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton jb_crear;
+    private javax.swing.JButton jb_eliminar;
     private javax.swing.JButton jb_guardar;
+    private javax.swing.JButton jb_modificar;
     private javax.swing.JComboBox<String> jc_generos;
     private javax.swing.JComboBox<String> jc_genre;
     private javax.swing.JComboBox<String> jc_puntaje;
+    private javax.swing.JComboBox<String> jcnuevogenero;
+    private javax.swing.JComboBox<String> jcnuevopuntaje;
+    private com.toedter.calendar.JDateChooser jd_nuevafechapub;
     private com.toedter.calendar.JDateChooser jd_publicacion;
     private javax.swing.JTextField jt_autor;
     private javax.swing.JTextField jt_copias;
     private javax.swing.JTextField jt_correo;
     private javax.swing.JTextField jt_edicion;
     private javax.swing.JTextField jt_nombre;
+    private javax.swing.JTextField jt_nuevaedicion;
+    private javax.swing.JTextField jt_nuevoautor;
+    private javax.swing.JTextField jt_nuevovalor;
     private javax.swing.JTextField jt_password;
     private javax.swing.JTextField jt_tel;
     private javax.swing.JTextField jt_titulo;
     private javax.swing.JTextField jt_user;
     private javax.swing.JTextField jt_valor;
+    private javax.swing.JTextField jtnuevascopias;
+    private javax.swing.JTextField jtnuevonombre;
+    private javax.swing.JTextArea ta_nuevadescripcion;
     // End of variables declaration//GEN-END:variables
     ArrayList<Usuarios> user = new ArrayList();
     ArrayList<Libro> libro = new ArrayList();
