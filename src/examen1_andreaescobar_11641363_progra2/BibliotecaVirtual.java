@@ -650,10 +650,10 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
         int newedicion;
         if (libro.size() == 0) {
             JOptionPane.showMessageDialog(this, "No hay libros existentes para modificar");
-        } else{
+        } else {
             newtitle = jtnuevonombre.getText();
-            newgenre = (String)jc_genre.getSelectedItem();
-            newscore = Integer.parseInt((String)jcnuevopuntaje.getSelectedItem());
+            newgenre = (String) jc_genre.getSelectedItem();
+            newscore = Integer.parseInt((String) jcnuevopuntaje.getSelectedItem());
             newvalue = Integer.parseInt(jt_nuevovalor.getText());
             newdescripcion = ta_nuevadescripcion.getText();
             newcopy = Integer.parseInt(jtnuevascopias.getText());
@@ -661,15 +661,16 @@ public class BibliotecaVirtual extends javax.swing.JFrame {
             newfechapublicacion = jd_nuevafechapub.getDate();
             newedicion = Integer.parseInt(jt_nuevaedicion.getText());
             libro.set(pos, new Libro(newtitle, newgenre, newvalue, ERROR, newdescripcion, pos, newautor, newfechapublicacion, newedicion));
-            
+
             jtnuevonombre.setText("");
             jt_nuevovalor.setText("");
             ta_nuevadescripcion.setText("");
             jtnuevascopias.setText("");
             jt_nuevoautor.setText("");
             jt_nuevaedicion.setText("");
-            
+
             JOptionPane.showMessageDialog(this, "Libro modificado exitosamente!");
+            this.cb.removeItem(pos);
         }
 
     }//GEN-LAST:event_jb_modificarMouseClicked
